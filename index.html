@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rural Communities</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+<style>
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+body{
+    scroll-behavior:smooth;
+    overflow:auto;
+}
+
+/* NAVBAR */
+nav{
+    width:100%;
+    height:80px;
+    background:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 60px;
+    position:fixed;
+    top:0;
+    z-index:1000;
+}
+.menu a{
+    text-decoration:none;
+    color:black;
+    padding:10px;
+    font-family:algerian;
+    font-size:20px;
+}
+.menu a:first-child{color:#e74c3c;}
+.menu a:hover{color:purple;}
+
+/* CARDS */
+.card{
+    width:20%;
+    display:inline-block;
+    box-shadow:2px 2px 20px black;
+    border-radius:20px;
+    margin:2%;
+    vertical-align:top;
+}
+.image img{
+    width:100%;
+    border-radius:20px 20px 0 0;
+}
+.title{text-align:center;padding:10px;}
+h1{font-size:20px;}
+.des{text-align:center;padding:10px;}
+
+button{
+    margin:10px;
+    background:white;
+    border:1px solid black;
+    border-radius:5px;
+    padding:10px;
+    cursor:pointer;
+}
+button:hover{
+    background:black;
+    color:white;
+    transition:.5s;
+}
+
+/* BANNER */
+.banner-one{
+    background:url('1.png') top/cover no-repeat;
+    height:600px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.banner-one .card{
+    width:80%;
+    background:rgba(0,0,0,0.8);
+    color:white;
+    padding:20px;
+    border-radius:20px;
+    text-align:center;
+}
+.banner-one input{
+    width:60%;
+    padding:10px;
+    font-size:18px;
+    border-radius:8px;
+    border:none;
+}
+.banner-one button{
+    width:10%;
+    padding:8px;
+    background:#e74c3c;
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-size:20px;
+}
+
+/* FOOTER */
+footer{
+    background:#262626;
+    padding:50px;
+    color:white;
+}
+.newsletter{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:30px;
+    border:1px solid rgba(255,255,255,0.2);
+}
+.newsletter input{
+    padding:20px;
+    width:70%;
+    border-radius:8px;
+    border:none;
+}
+.newsletter button{
+    padding:20px;
+    background:#e74c3c;
+    color:white;
+    border:none;
+}
+.f-contact{
+    display:flex;
+    justify-content:space-between;
+    margin-top:2em;
+}
+.f-contact p{color:grey;line-height:2em;}
+.f-contact p:hover{color:white;}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+    <div class="logo">
+        <img src="2.png" width="80" height="80">
+    </div>
+    <div class="menu">
+        <a href="index.html"><i class="fa fa-home"></i> HOME</a>
+        <a href="login.html"><i class="fa fa-user"></i> REGISTRATION</a>
+        <a href="categories.html"><i class="fa fa-folder"></i> CATEGORIES</a>
+        <a href="about.html"><i class="fa fa-info-circle"></i> ABOUT</a>
+        <a href="contact.html"><i class="fa fa-envelope"></i> CONTACT</a>
+    </div>
+</nav>
+</header>
+
+<section class="banner-one">
+<div class="card">
+    <blockquote>
+        "Our Goal Is To Improve The Economic Condition In Rural Area Inhabitants To Access The Services They Need And Want"
+    </blockquote><br>
+    <input type="text" placeholder="Search here...">
+    <button><i class="fa fa-search"></i></button>
+</div>
+</section>
+
+<div style="margin-top:650px;text-align:center;">
+
+<div class="card">
+    <div class="image">
+        <img id="image" src="undevelopedH.jpg">
+    </div>
+    <div class="title">
+        <h1 style="color:green"><u>HEALTH CARE</u></h1>
+        <h1 style="color:blue">Kerudi Hospitals, Karnataka</h1>
+    </div>
+    <div class="des">
+        <p id="message">India suffers from lack of healthcare access.</p>
+        <button onclick="before()">Undeveloped</button>
+        <button onclick="afterr()">Developed</button>
+    </div>
+</div>
+
+</div>
+
+<script>
+function before(){
+    image.src="undevelopedH.jpg";
+    message.innerHTML="India suffers from lack of healthcare access.";
+}
+function afterr(){
+    image.src="developedH.jpg";
+    message.innerHTML="Improved healthcare facilities with modern technology.";
+}
+</script>
+
+<footer>
+<div class="newsletter">
+    <div>
+        <h2>Subscribe our newsletter</h2>
+        <p>We truly care for rural development.</p>
+    </div>
+    <div>
+        <input type="text" placeholder="Enter your email">
+        <button>Subscribe</button>
+    </div>
+</div>
+</footer>
+
+</body>
+</html>
