@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rural Communities</title>
 
@@ -9,176 +9,199 @@
 
 <style>
 *{
-    padding:0;
     margin:0;
+    padding:0;
     box-sizing:border-box;
+    font-family:Arial, sans-serif;
 }
+
 body{
     scroll-behavior:smooth;
-    overflow:auto;
+    background:#f5f5f5;
 }
 
 /* NAVBAR */
 nav{
     width:100%;
     height:80px;
-    background:white;
+    background:#fff;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:0 60px;
+    padding:0 40px;
     position:fixed;
     top:0;
     z-index:1000;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
 }
+
 .menu a{
     text-decoration:none;
-    color:black;
-    padding:10px;
-    font-family:algerian;
-    font-size:20px;
+    color:#000;
+    margin:0 10px;
+    font-size:18px;
 }
-.menu a:first-child{color:#e74c3c;}
-.menu a:hover{color:purple;}
+.menu a:hover{color:#e74c3c;}
+
+/* BANNER */
+.banner-one{
+    background:url('1.png') center/cover no-repeat;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding-top:80px;
+}
+
+.banner-card{
+    width:80%;
+    background:rgba(0,0,0,0.75);
+    color:#fff;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    animation:fadeIn 1.2s ease;
+}
+
+.banner-card input{
+    width:60%;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+}
+.banner-card button{
+    padding:12px;
+    background:#e74c3c;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:18px;
+    cursor:pointer;
+}
 
 /* CARDS */
+.cards{
+    margin-top:40px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
 .card{
-    width:20%;
-    display:inline-block;
-    box-shadow:2px 2px 20px black;
+    width:260px;
+    background:#fff;
+    margin:20px;
     border-radius:20px;
-    margin:2%;
-    vertical-align:top;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    overflow:hidden;
+    transition:transform 0.4s, box-shadow 0.4s;
 }
-.image img{
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+.card img{
     width:100%;
-    border-radius:20px 20px 0 0;
+    height:180px;
+    object-fit:cover;
 }
+
 .title{text-align:center;padding:10px;}
-h1{font-size:20px;}
 .des{text-align:center;padding:10px;}
 
 button{
-    margin:10px;
+    margin:8px;
+    padding:8px 14px;
+    border:1px solid #000;
     background:white;
-    border:1px solid black;
-    border-radius:5px;
-    padding:10px;
     cursor:pointer;
+    border-radius:6px;
 }
 button:hover{
     background:black;
     color:white;
-    transition:.5s;
-}
-
-/* BANNER */
-.banner-one{
-    background:url('1.png') top/cover no-repeat;
-    height:600px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
-.banner-one .card{
-    width:80%;
-    background:rgba(0,0,0,0.8);
-    color:white;
-    padding:20px;
-    border-radius:20px;
-    text-align:center;
-}
-.banner-one input{
-    width:60%;
-    padding:10px;
-    font-size:18px;
-    border-radius:8px;
-    border:none;
-}
-.banner-one button{
-    width:10%;
-    padding:8px;
-    background:#e74c3c;
-    color:white;
-    border:none;
-    border-radius:10px;
-    font-size:20px;
 }
 
 /* FOOTER */
 footer{
     background:#262626;
-    padding:50px;
     color:white;
+    padding:40px;
+    margin-top:40px;
 }
+
 .newsletter{
     display:flex;
+    flex-wrap:wrap;
     justify-content:space-between;
     align-items:center;
-    padding:30px;
-    border:1px solid rgba(255,255,255,0.2);
 }
+
 .newsletter input{
-    padding:20px;
-    width:70%;
-    border-radius:8px;
+    padding:12px;
+    width:250px;
+    border-radius:6px;
     border:none;
 }
+
 .newsletter button{
-    padding:20px;
+    padding:12px 18px;
     background:#e74c3c;
     color:white;
     border:none;
+    border-radius:6px;
 }
-.f-contact{
-    display:flex;
-    justify-content:space-between;
-    margin-top:2em;
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .menu{display:none;}
+    .banner-card input{width:100%;}
+    .cards{flex-direction:column;align-items:center;}
 }
-.f-contact p{color:grey;line-height:2em;}
-.f-contact p:hover{color:white;}
+
+/* ANIMATION */
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(30px);}
+    to{opacity:1; transform:translateY(0);}
+}
 </style>
 </head>
 
 <body>
 
-<header>
 <nav>
-    <div class="logo">
-        <img src="2.png" width="80" height="80">
-    </div>
+    <img src="2.png" width="70">
     <div class="menu">
-        <a href="index.html"><i class="fa fa-home"></i> HOME</a>
-        <a href="login.html"><i class="fa fa-user"></i> REGISTRATION</a>
-        <a href="categories.html"><i class="fa fa-folder"></i> CATEGORIES</a>
-        <a href="about.html"><i class="fa fa-info-circle"></i> ABOUT</a>
-        <a href="contact.html"><i class="fa fa-envelope"></i> CONTACT</a>
+        <a href="index.html">HOME</a>
+        <a href="login.html">REGISTRATION</a>
+        <a href="categories.html">CATEGORIES</a>
+        <a href="about.html">ABOUT</a>
+        <a href="contact.html">CONTACT</a>
     </div>
 </nav>
-</header>
 
 <section class="banner-one">
-<div class="card">
-    <blockquote>
-        "Our Goal Is To Improve The Economic Condition In Rural Area Inhabitants To Access The Services They Need And Want"
-    </blockquote><br>
-    <input type="text" placeholder="Search here...">
-    <button><i class="fa fa-search"></i></button>
-</div>
+    <div class="banner-card">
+        <h2>
+            "Our Goal Is To Improve The Economic Condition In Rural Area Inhabitants"
+        </h2><br>
+        <input type="text" placeholder="Search here...">
+        <button><i class="fa fa-search"></i></button>
+    </div>
 </section>
 
-<div style="margin-top:650px;text-align:center;">
+<div class="cards">
 
 <div class="card">
-    <div class="image">
-        <img id="image" src="undevelopedH.jpg">
-    </div>
+    <img id="image" src="undevelopedH.jpg">
     <div class="title">
-        <h1 style="color:green"><u>HEALTH CARE</u></h1>
-        <h1 style="color:blue">Kerudi Hospitals, Karnataka</h1>
+        <h3 style="color:green">HEALTH CARE</h3>
+        <p style="color:blue">Kerudi Hospital, Karnataka</p>
     </div>
     <div class="des">
-        <p id="message">India suffers from lack of healthcare access.</p>
+        <p id="message">Limited access to healthcare facilities.</p>
         <button onclick="before()">Undeveloped</button>
         <button onclick="afterr()">Developed</button>
     </div>
@@ -189,11 +212,11 @@ footer{
 <script>
 function before(){
     image.src="undevelopedH.jpg";
-    message.innerHTML="India suffers from lack of healthcare access.";
+    message.innerHTML="Limited access to healthcare facilities.";
 }
 function afterr(){
     image.src="developedH.jpg";
-    message.innerHTML="Improved healthcare facilities with modern technology.";
+    message.innerHTML="Modern healthcare with advanced facilities.";
 }
 </script>
 
@@ -201,7 +224,7 @@ function afterr(){
 <div class="newsletter">
     <div>
         <h2>Subscribe our newsletter</h2>
-        <p>We truly care for rural development.</p>
+        <p>We care deeply about rural development.</p>
     </div>
     <div>
         <input type="text" placeholder="Enter your email">
